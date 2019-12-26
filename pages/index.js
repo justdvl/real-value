@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-import { Chart } from "react-charts";
 import axios from "axios";
-import Graph from "./graph";
+import GraphWrap from "../components/graphWrap";
 
 class Index extends React.Component {
   constructor(props) {
@@ -73,9 +72,9 @@ class Index extends React.Component {
           </button>
         </p>
 
-        {this.state.graphData.length ? (
+        {this.state.graphData.length > 0 ? (
           <div>
-            <Graph graphData={this.state.graphData} />
+            <GraphWrap graphData={this.state.graphData} />
           </div>
         ) : null}
       </div>
